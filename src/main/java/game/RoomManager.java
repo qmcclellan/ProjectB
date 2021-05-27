@@ -37,14 +37,14 @@ public class RoomManager implements Serializable{
 	    		+ "To the north is a small room, where you can see a piano.",4,4);
 	    	
 	    Room kitchen = new Room(
-	    		"The Foyer",
+	    		"The Kitchen",
 	    		"a small foyer",
 	    		"The small entryway of a neo-colonial house. A dining room is open to the south, where a large table can be seen." + "\n"
 	    		+ "The hardwood floor leads west into doorway, next to a staircase that leads up to a second floor." + "\n"
 	    		+ "To the north is a small room, where you can see a piano.",4,4);
 	
 	    Room backroom = new Room(
-	    		"The Foyer",
+	    		"The Backroom",
 	    		"a small foyer",
 	    		"The small entryway of a neo-colonial house. A dining room is open to the south, where a large table can be seen." + "\n"
 	    		+ "The hardwood floor leads west into doorway, next to a staircase that leads up to a second floor." + "\n"

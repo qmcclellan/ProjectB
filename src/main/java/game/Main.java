@@ -9,6 +9,7 @@ public class Main {
 	
 	private static FloorLevel floor = new FloorLevel("Level1");
 	private static Player player1 = new Player();
+	private static Scanner scanner;
 
 	public static void runTour() {
 		floor.getRooms().init();
@@ -29,7 +30,13 @@ public class Main {
 		
 		System.out.println("Please Enter direction to go");
 		
-		String[] movement =collectInput();
+	
+		
+		Runnable r = () -> 
+		{
+			while(true) {
+			String[] movement =collectInput();
+		
 		
 		parse(movement, player1);
 		
@@ -41,10 +48,17 @@ public class Main {
 		
 		System.out.println("Moving player");
 		
+		continue;
+			}
+		};
 		
 		
+		r.run();
 		
 	}
+	
+	
+	
 	public static void printRoom(Player player) {
 		
 		player.getCurrentRoom();
@@ -55,7 +69,7 @@ public class Main {
 		
 		
 		
-		Scanner scanner = new Scanner(System.in);
+	scanner = new Scanner(System.in);
 		String input = "";
 		
 		
@@ -67,7 +81,7 @@ public class Main {
 		input = input.toLowerCase().trim();
 		System.out.println(input);
 		
-		scanner.close();
+		//scanner.close();
 		
 		String[] action = input.split(" ");
 		
@@ -79,7 +93,9 @@ public class Main {
 			System.out.println("Inside parse method");
 		String direction = null;
 		
-		
+		if(action[0] == "quit") {
+			System.exit(0);
+		}
 		
 			direction = action[0];
 			
